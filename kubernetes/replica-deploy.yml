@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-web-test
+  labels:
+    app: basic-web-test
+spec:
+  selector:
+    matchLabels:
+      app: basic-web-test
+  replicas: 20
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: basic-web-test
+    spec:
+      containers:
+      - name: basic-web-test
+        image: brianmcjilton/basic-web-test:1.2
+        #imagePullPolicy: Always
+        ports:
+          - containerPort: 80
