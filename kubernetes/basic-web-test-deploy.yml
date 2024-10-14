@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-web-test
+  labels:
+    app: basic-web-test
+spec:
+  containers:
+  - name: basic-web-test
+    image: brianmcjilton/basic-web-test:1.1
+    ports:
+      - containerPort: 80
