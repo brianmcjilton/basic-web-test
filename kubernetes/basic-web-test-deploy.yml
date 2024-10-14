@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: basic-web-test
-    image: brianmcjilton/basic-web-test:1.1
+    image: brianmcjilton/basic-web-test:1.2
     ports:
       - containerPort: 80
